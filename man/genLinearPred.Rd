@@ -7,9 +7,7 @@
 genLinearPred(Data)
 }
 \arguments{
-\item{Data}{matrix}
-
-\item{betas}{named list of beta values}
+\item{Data}{object of class LinearPredictor}
 }
 \description{
 genLinearPred function
@@ -17,7 +15,10 @@ genLinearPred function
 \examples{
 ## Pass the function a matrix and a named list of beta values
 ## The beta values must have the same names as the rows in the matrix
-genLinearPred(betas, matrix)
+genLinearPred(Data)
+
+## Returns the class object with the linear predictor added to the ExpressionSet slot
+## Also filters out all genes that are not in either the beta values of the ExpressionSet
 }
 \keyword{linear}
 \keyword{predictor}

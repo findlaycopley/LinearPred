@@ -51,5 +51,4 @@ setupClass(data = matrix,
         time_col = "PROG_TIME",
         ind_col = "PROG_IND")
 
-
 }

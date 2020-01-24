@@ -1,14 +1,20 @@
-#' @title genLinearPred function
-#' @param Data matrix
+#' @title findBestCutoff function
+#' @param Data LinearPredictor class Object
 #' @param betas named list of beta values
 #' @keywords linear predictor
 #' @export
 #' @examples
-#' ## Pass the function a matrix and a named list of beta values
-#' ## The beta values must have the same names as the rows in the matrix
-#' genLinearPred(betas, matrix)
+#' ## Pass the LinearPredictor Object
+#' ## tell it what the names of the time and indicator columns are
+#' findBestCutoff(Data)
+#'
+#' ## If the columns aren't named time/ind
+#' findBestCutoff(Data, time="PROG_TIME", ind="PROG_IND")
+#'
+#' ## If you don't want to print the cut off plot (it will still be stored):
+#' findBestCutoff(Data, time="PROG_TIME", ind="PROG_IND", PRINT=FALSE)
 
-findBestCuttoff <- function(Data, time="time", ind="ind", PRINT=TRUE) {
+findBestCutoff <- function(Data, time="time", ind="ind", PRINT=TRUE) {
         Data@ExprSet$time <- pData(Data@ExprSet)[,time]
         Data@ExprSet$ind <- pData(Data@ExprSet)[,ind]
         Lower_q <- 0.2
