@@ -1,6 +1,6 @@
 # LinearPred
 
-```
+```{R}
 x <- setupClass(RDS,
                 betas,
                 time_col="PROG_TIME",
